@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <motion.div
       className='flex flex-col justify-center items-center text-center my-20'
-      initial={{ opacity: 0, y: 80 }}   // 🔥 small improvement (smoother entry)
+      initial={{ opacity: 0, y: 80 }}   
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -31,7 +31,7 @@ const Header = () => {
         className='text-stone-500 inline-flex text-center gap-2 bg-white px-6 py-1 rounded-full border border-neutral-500'
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}  // 🔥 improved timing
+        transition={{ duration: 0.6, delay: 0.1 }}  
       >
         <p>Best text to image generator</p>
         <img src={assets.star_icon} alt="header image" />
@@ -41,7 +41,7 @@ const Header = () => {
         className='text-4xl font-bold text-gray-900 tracking-tight max-w-[300px] sm:text-7xl sm:max-w-[590px] mx-auto mt-10 text-center'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }} // 🔥 smoother heading reveal
+        transition={{ duration: 1.2 }} 
       >
         Turn Text to <span className='text-blue-500'>images</span>, in seconds
       </motion.h1>
@@ -50,7 +50,7 @@ const Header = () => {
         className='text-gray-500 mt-6 text-sm sm:text-base'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.4 }} // 🔥 slightly delayed for nice flow
+        transition={{ duration: 1.4 }} 
       >
         Create stunning images with our AI-powered text-to-image generator. Transform your ideas into visuals effortlessly.
       </motion.p>
@@ -61,7 +61,7 @@ const Header = () => {
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.6 }} // 🔥 smoother CTA appearance
+        transition={{ duration: 1.6 }} 
         onClick={onClickHandler}
       >
         Generate Images

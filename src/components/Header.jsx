@@ -36,7 +36,6 @@ const Header = () => {
         <img src={assets.star_icon} alt="header image" />
       </motion.div>
 
-      {/* ONLY CHANGE APPLIED HERE */}
       <motion.h1
         className='text-4xl font-bold text-gray-900 tracking-tight max-w-[300px] sm:text-7xl sm:max-w-[590px] mx-auto mt-10 text-center'
       >
@@ -52,8 +51,9 @@ const Header = () => {
         Create stunning images with our AI-powered text-to-image generator. Transform your ideas into visuals effortlessly.
       </motion.p>
 
+      {/* 🔥 SMALL CHANGE APPLIED HERE */}
       <motion.button
-        className='sm:text-lg text-white bg-black w-auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full cursor-pointer'
+        className='sm:text-lg text-white bg-black w-auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full cursor-pointer font-medium'
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}

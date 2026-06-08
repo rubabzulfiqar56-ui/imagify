@@ -21,16 +21,17 @@ const Header = () => {
   return (
     <motion.div
       className='flex flex-col justify-center items-center text-center my-20'
-      initial={{ opacity: 0.2, y: 100 }}
+      initial={{ opacity: 0, y: 80 }}   // 🔥 small improvement (smoother entry)
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
+
       <motion.div
         className='text-stone-500 inline-flex text-center gap-2 bg-white px-6 py-1 rounded-full border border-neutral-500'
-        initial={{ opacity: 0.2, y: -20 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.1 }}  // 🔥 improved timing
       >
         <p>Best text to image generator</p>
         <img src={assets.star_icon} alt="header image" />
@@ -38,59 +39,35 @@ const Header = () => {
 
       <motion.h1
         className='text-4xl font-bold text-gray-900 tracking-tight max-w-[300px] sm:text-7xl sm:max-w-[590px] mx-auto mt-10 text-center'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }} // 🔥 smoother heading reveal
       >
         Turn Text to <span className='text-blue-500'>images</span>, in seconds
       </motion.h1>
 
       <motion.p
         className='text-gray-500 mt-6 text-sm sm:text-base'
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4 }} // 🔥 slightly delayed for nice flow
       >
         Create stunning images with our AI-powered text-to-image generator. Transform your ideas into visuals effortlessly.
       </motion.p>
 
-      {/* 🔥 SMALL CHANGE APPLIED HERE */}
       <motion.button
         className='sm:text-lg text-white bg-black w-auto mt-8 px-12 py-2.5 flex items-center gap-2 rounded-full cursor-pointer font-medium'
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ default: { duration: 0.8 }, opacity: { delay: 0.8, duration: 1 } }}
+        transition={{ duration: 1.6 }} // 🔥 smoother CTA appearance
         onClick={onClickHandler}
       >
         Generate Images
         <img className='h-6' src={assets.star_group} alt="Star group" />
       </motion.button>
 
-      <motion.div
-        className='flex flex-wrap justify-center gap-3 mt-16'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        {Array(6).fill('').map((item, index) => (
-          <motion.img
-            key={index}
-            className='cursor-pointer max-sm:w-10'
-            whileHover={{ scale: 1.05 }}
-            src={index % 2 === 0 ? assets.sample_img_1 : assets.sample_img_2}
-            alt="sample"
-            width={70}
-          />
-        ))}
-      </motion.div>
-
-      <motion.p
-        className='text-neutral-600 mt-2'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-      >
-        Generated images from Imagify
-      </motion.p>
     </motion.div>
   )
 }
